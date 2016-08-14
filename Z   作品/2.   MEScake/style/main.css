@@ -1,0 +1,752 @@
+.header {
+    width: 960px;
+    height: 126px;
+    margin: 0 auto;
+}
+
+.header .logo {
+    height: 60px;
+    padding-top: 40px;
+}
+
+.header .nav {
+    height: 26px;
+    float: left;
+
+}
+
+.nav .nav-icon-1 {
+    display: block;
+    width: 8px;
+    height: 8px;
+    background-color: #B5EBA7;
+    border-radius: 50%;
+    float: left;
+    margin-top: 0.7em;
+    margin-right: 0.8em;
+
+}
+
+.nav .nav-icon-2 {
+    display: block;
+    width: 8px;
+    height: 8px;
+    background-color: #F8D280;
+    border-radius: 50%;
+    float: left;
+    margin-top: 0.7em;
+    margin-right: 0.8em;
+}
+
+.nav a:link, .nav a:visited {
+    height: 26px;
+    line-height: 26px;
+    font-size: 14px;
+    font-family: "Microsoft YaHei", "微软雅黑";
+    font-weight: bold;
+    text-decoration: none;
+    color: #181818;
+    margin-right: 40px;
+    cursor: pointer;
+    float: left;
+    padding: 0 8px;
+}
+
+.nav a:hover, .nav a:active {
+    height: 26px;
+    line-height: 26px;
+    font-size: 14px;
+    font-family: "Microsoft YaHei", "微软雅黑";
+    font-weight: bold;
+    text-decoration: none;
+    color: #FFFFFF;
+    background: #000;
+    margin-right: 40px;
+    cursor: pointer;
+    float: left;
+    padding: 0 8px;
+}
+
+.login {
+    float: right;
+    position: relative;
+
+}
+
+.login .shop-icon {
+    padding: 0 5px;
+    position: absolute;
+    left: 86px;
+    top: 2px;
+
+}
+
+.login .shoper {
+    margin-left: 18px;
+}
+
+.login a:link, .login a:visited {
+    font-size: 13px;
+    color: #635E5E;
+    text-decoration: none;
+}
+
+.login a:hover, .login a:active {
+    font-size: 13px;
+    color: #FF8A6F;
+    text-decoration: none;
+}
+
+#ad {
+    height: 440px;
+    position: relative;
+    overflow: hidden;
+}
+
+#ad ul {
+    position: absolute;
+}
+
+#ad li {
+    list-style-type: none;
+}
+
+#ad li img {
+    list-style-type: none;
+    float: left;
+    position: relative;
+    left: 0;
+}
+
+#btn {
+    position: absolute;
+    width: 200px;
+    height: 20px;
+    margin: 0 auto;
+    left: 45%;
+    bottom: 20px;
+
+}
+
+#btn a {
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #B2B2B2;
+    float: left;
+    margin: 10px
+}
+
+#btn a:hover {
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #333333;
+    float: left;
+    margin: 10px
+}
+
+#btn .active {
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #333333;
+    float: left;
+    margin: 10px
+}
+
+.cakes {
+    width: 100%;
+    height: auto;
+    border-top: 1px solid #BCBCBC;
+    border-bottom: 1px solid #000;
+}
+
+.cakes a {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+    font-family: "Microsoft YaHei", "微软雅黑";
+
+}
+
+.cakes p{
+    padding-top: 10px;
+}
+.cakes a p {
+    color: #666760;
+    font-size: 12px;
+    font-weight: normal;
+}
+
+.cakeTL {
+    width: 50%;
+    height: 310px;
+    float: left;
+    display: block;
+    background: #FFF5EA;
+    position: relative;
+}
+
+.cakeTL:hover {
+    background: #FBECD7;
+}
+
+.cakeTL h3 {
+    position: absolute;
+    right: 370px;
+    top: 36px;
+    
+
+}
+
+.cakeTL p {
+    position: absolute;
+    right: 362px;
+    top: 72px;
+}
+
+.cakeTL span {
+    display: block;
+    width: 250px;
+    height: 188px;
+    background: url("../images/luckyman.jpg") no-repeat;
+    position: absolute;
+    right: 110px;
+    bottom: 30px;
+
+}
+
+.cakeTR {
+    width: 50%;
+    height: 310px;
+    float: right;
+    display: block;
+    background: #FCF7EB;
+    position: relative;
+}
+
+.cakeTR:hover {
+    background: #FFF4D4;
+}
+
+.cakeTR h3 {
+    position: absolute;
+    left: 37px;
+    top: 36px;
+}
+
+.cakeTR p {
+    position: absolute;
+    left: 36px;
+    top: 72px;
+}
+
+.cakeTR span {
+    display: block;
+    width: 250px;
+    height: 188px;
+    background: url("../images/baluobo.jpg") no-repeat;
+    position: absolute;
+    left: 210px;
+    bottom: 30px;
+}
+
+.cakeBL {
+    width: 50%;
+    height: 310px;
+    float: left;
+    display: block;
+    background: #F3FEFF;
+    position: relative;
+}
+
+.cakeBL:hover {
+    background: #DDF6FA;
+
+}
+
+.cakeBL h3 {
+    position: absolute;
+    right: 370px;
+    top: 36px;
+}
+
+.cakeBL p {
+    position: absolute;
+    right: 362px;
+    top: 72px;
+}
+
+.cakeBL span {
+    display: block;
+    width: 250px;
+    height: 188px;
+    background: url("../images/langmanhuakai.jpg") no-repeat;
+    position: absolute;
+    right: 110px;
+    bottom: 30px;
+
+}
+
+.cakeBR {
+    width: 50%;
+    height: 310px;
+    float: right;
+    display: block;
+    background: #FFFBFB;
+    position: relative;
+}
+
+.cakeBR:hover {
+    background: #FEF2F2;
+}
+
+.cakeBR h3 {
+    position: absolute;
+    left: 37px;
+    top: 36px;
+}
+
+.cakeBR p {
+    position: absolute;
+    left: 36px;
+    top: 72px;
+}
+
+.cakeBR span {
+    display: block;
+    width: 250px;
+    height: 188px;
+    background: url("../images/qianyuqianxun.jpg") no-repeat;
+    position: absolute;
+    left: 210px;
+    bottom: 30px;
+}
+
+/*footer*/
+.footer {
+    width: 100%;
+    height: 100px;
+    background: #FFFFFF;
+    float: left;
+    border-top: 1px solid #000;
+}
+
+.foot-con {
+    width: 960px;
+    margin: 0 auto;
+    font-size: 13px;
+    font-family: "Microsoft YaHei", "微软雅黑";
+
+}
+
+.foot-con p {
+    float: left;
+    margin-top: 20px;
+
+}
+
+.foot-con em {
+    float: right;
+    margin-top: 20px;
+}
+
+/*商品详情页面*/
+.shop-price {
+    width: 100%;
+    height: 456px;
+    background: #F5F5F5;
+    background-image: url("../images/S03.png");
+    background-repeat: no-repeat;
+    background-position: 29% 25px;
+    border-top: 1px solid #000;
+    position: relative;
+
+}
+
+.shop-choose {
+    width: 300px;
+    height: 250px;
+    border: 1px solid #E8E8E8;
+    position: absolute;
+    top: 50px;
+    right: 200px;
+}
+
+.choose-top {
+    width: 100%;
+    height: 24%;
+    background-color: #FFFFFF;
+    background-image: url("../images/buy-line.png");
+    background-repeat: repeat-x;
+    background-position: bottom;
+    line-height: 100%;
+    position: relative;
+    float: left;
+
+}
+
+.choose-input {
+    width: 14px;
+    height: 14px;
+    background: url("../images/ico_details.png") no-repeat -170px -3px;
+    position: absolute;
+    top: 22px;
+    left: 22px;
+    float: left;
+
+}
+
+.choose-top p {
+    float: left;
+    position: absolute;
+    left: 40px;
+    font-size: 13px;
+    top: 10px;
+
+}
+
+.choose-bottom {
+    width: 100%;
+    height: 100%;
+    background: #FBFBFB;
+}
+
+.choose-bottom span {
+    font-size: 30px;
+    font-weight: bold;
+    height: 60px;
+    line-height: 60px;
+    width: 100%;
+    display: block;
+    float: left;
+    text-align: center;
+}
+
+.choose-bottom .buy {
+    float: left;
+    display: block;
+    width: 150px;
+    height: 40px;
+    border-radius: 6px;
+    background-color: #D11C08;
+    color: #FFFFFF;
+    font-size: 18px;
+    text-align: center;
+    line-height: 40px;
+    text-decoration: none;
+    margin-left: 80px;
+    margin-bottom: 14px;
+}
+
+.choose-bottom .shop-car {
+    float: left;
+    display: block;
+    width: 150px;
+    height: 40px;
+    border-radius: 6px;
+    background-color: #E4E4E4;
+    color: #79617D;
+    font-size: 18px;
+    text-align: center;
+    line-height: 40px;
+    text-decoration: none;
+    margin-left: 80px;
+
+}
+
+.btn1 {
+    width: 100%;
+    float: left;
+}
+
+.pic {
+    width: 100%;
+    height: auto;
+}
+
+.pic img {
+    width: 100%;
+    margin: 0 auto;
+    border-bottom: 1px solid #C8C7C6;
+}
+
+.bottom-warp {
+    width: 100%;
+    height: 220px;
+    background: #F7F7F7;
+}
+
+.info {
+    width: 900px;
+    margin: 0 auto;
+
+}
+
+.info1, .info2, .info3 {
+    width: 28%;
+    position: relative;
+    padding: 40px 20px;
+    float: left;
+
+}
+
+.info .info-title {
+    width: 72px;
+    height: 24px;
+    border-radius: 10px;
+    background: #EE9572;
+    color: #FFFFFF;
+    text-align: center;
+    line-height: 24px;
+    font-size: 14px;
+    font-weight: bold;
+    margin-left: 60px;
+
+}
+
+.info p, .info span {
+    font-size: 13px;
+    color: #564F3D;
+}
+
+.info-care {
+
+}
+
+.info .care1 {
+    display: block;
+    width: 60px;
+    height:32px;
+    float: left;
+    line-height: 30px;
+    margin: 15px;
+
+}
+.info .care2{
+    display: block;
+    width: 120px;
+    height:32px;
+    float: left;
+    line-height: 30px;
+    margin: 15px;
+}
+
+.info .care1 em {
+     display: block;
+     width: 26px;
+     height:31px;
+     float: left;
+     background: url("../images/ico_details.png") no-repeat 0 0;
+ }
+.info .care2 em {
+    display: block;
+    width: 26px;
+    height:31px;
+    float: left;
+    background: url("../images/ico_details.png") no-repeat -40px 0;
+}
+
+.info2 .info-title{
+    background-color: #7DB881;
+}
+
+.info2 p,.info3 p{
+    text-indent:18px;
+}
+
+.info3 .info-title{
+    background-color: #E9BF63;
+}
+
+.info1,.info2{
+    border-right:2px dashed #E5E5E5;
+}
+
+/*美味页面*/
+.cake-title{
+    width:100%;
+    height:160px;
+    background-image: linear-gradient(#FFEDE7,#FFF);
+
+}
+
+.cake-title-content{
+    width: 960px;
+    margin:0 auto;
+    position: relative;
+}
+
+.cake-title-content .cake-title-top{
+    text-decoration: none;
+    color: #A3838F;
+    font-size: 14px;
+    position: absolute;
+    top:20px;
+    left:20px;
+    font-family: "Microsoft YaHei", "微软雅黑";
+    padding-left: 10px;
+}
+.cake-title-content .cake-title-top:hover{
+    background: url("../images/pro-nav-li-bg.png") no-repeat left center;
+    color: #000;
+}
+
+.cake-title-content h2{
+    font-size: 18px;
+    text-align: center;
+    position: absolute;
+    top: 20px;
+    text-indent: 40%;
+   font-weight: bold;
+
+}
+
+.cake-title-content .title-a{
+    position: absolute;
+    top:45px;
+    left:32%;
+}
+
+.cake-title-content .title-a li{
+    list-style-type: none;
+    float: left;
+    margin:0 5px;
+    font-size: 14px;
+    font-family: "Microsoft YaHei", "微软雅黑";
+
+}
+
+.cake-title-content .title-a a{
+    text-decoration: none;
+    color: #666666;
+}
+
+.cake-content{
+    width: 836px;
+    height: 1000px;
+    margin: 0 auto;
+}
+.cake-theme{
+    float: left;
+}
+.cake-content h3{
+    border-bottom: 1px solid #000;
+    padding-bottom: 10px;
+}
+
+.cake-content .cake-list{
+    width:408px;
+    float: left;
+    margin-bottom: 50px;
+}
+
+.cake-content .margin-r-20{
+    margin-right: 20px;
+
+}
+
+
+.cake-content .cake-list h4{
+    font-size: 20px;
+    font-family: 楷体;
+}
+
+.cake-content .cake-list p{
+    font-size: 16px;
+    font-family: 楷体;
+    margin-top: -20px;
+}
+
+
+#mask{
+    background: #000;
+    opacity: 0.6;
+    filter:alpha(opacity=60);
+    height:1000px;
+    width:100%;
+    position: absolute;
+    top:0;
+    left:0;
+    z-index: 1000;
+
+}
+
+#login{
+    width:400px;
+    height: 340px;
+    position: fixed;
+    left:30%;
+    top:30%;
+    z-index: 1001;
+    background: #fff;
+}
+
+#login h3{
+    text-align: center;
+    font-family: "Microsoft YaHei", "微软雅黑";
+    font-weight: normal;
+}
+
+#login .phone,#login .key{
+    display: block;
+    width:310px;
+    height:34px;
+    padding: 5px;
+    margin:0 auto;
+    border-radius:4px;
+    border:1px solid #DDDDDD;
+    font-size: 14px;
+}
+
+#login .btn-login,#login .btn-reg{
+    display: block;
+    width:320px;
+    height:34px;
+    background: #D11C08;
+    margin:0 auto;
+    border-radius:4px;
+    border:none;
+    font-size: 16px;
+    font-family: "Microsoft YaHei", "微软雅黑";
+    color: #fff;
+    margin-top: 20px;
+    margin-bottom:10px;
+}
+
+#login .btn-reg {
+    border:1px solid #D8D7D7;
+    background: #FAFAFA;
+    color: #616161;
+    margin-top: 10px;
+}
+
+#login .checkbox{
+    display: block;
+    width:320px;
+    margin:0 auto;
+    font-size: 14px;
+    color: #8B8B8B;
+}
+
+#login .checkbox a{
+    float: right;
+    font-size: 14px;
+    color: #8B8B8B;
+}
+.login-con{
+     position: relative;
+ }
+#close{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top:14px;
+    right:0;
+    background: url("../images/dialog-close-btn.png") no-repeat;
+    cursor: pointer;
+}

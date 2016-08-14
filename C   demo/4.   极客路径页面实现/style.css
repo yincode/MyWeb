@@ -1,0 +1,186 @@
+body,
+h3,
+p {
+    margin: 0;
+    padding: 0;
+}
+
+h3 {
+    font-size: 100%;
+    /*font-weight: normal;*/
+}
+
+body {
+    background-color: #f1f1f1;
+}
+
+a {
+    text-decoration: none;
+}
+
+.cf:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.w-1000 {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+.coursecontent .lessonlist {
+    padding: 60px 0 60px 0;
+    width: 780px;
+    float: right;
+    border-left: 5px solid #e4e4e4;
+}
+
+.coursecontent .lessonlist .learn-lessonlist {
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.coursecontent .lessonlist .learn-lessonlist .stagewring-box {
+    width: 160px;
+    height: 80px;
+    padding: 10px;
+    position: absolute;
+    left: -230px;
+    top: 0;
+    background-color: #fff;
+}
+
+.coursecontent .lessonlist .learn-lessonlist .stageicon {
+    position: absolute;
+    top: 0;
+    left: -17px;
+    z-index: 30;
+    width: 20px;
+    height: 20px;
+    display: block;
+    border: 5px solid #e4e4e4;
+    background-color: #f1f1f1;
+}
+
+.coursecontent .lessonlist .learn-lessonlist .stagewring-box .jiantou-right {
+    position: absolute;
+    top: 0;
+    right: -26px;
+    display: block;
+    width: 0;
+    height: 0;
+    border-width: 10px 13px;
+    border-style: solid;
+    border-color: #fff #f1f1f1 #f1f1f1 #fff;
+}
+
+.coursecontent .lessonlist .learn-lessonlist .stagewring-box .text-content {
+    width: 150px;
+    height: 80px;
+    overflow: hidden;
+}
+
+.coursecontent .lessonlist .text-content h3 {
+    font-size: 18px;
+    color: #101213;
+    line-height: 30px;
+}
+
+.coursecontent .lessonlist .text-content p {
+    font-size: 12px;
+    line-height: 22px;
+    color: #707171;
+}
+
+.coursecontent .learnimg-box {
+    float: left;
+    margin-left: 30px;
+    margin-bottom: 15px;
+}
+
+.learnimg-box {
+    width: 230px;
+    height: 230px;
+    position: relative;
+    overflow: hidden;
+    background-color: #fff;
+    cursor: painter;
+}
+
+.coursecontent .learnimg-box .img-box {
+    /*overflow: hidden;*/
+    width: 100%;
+    height: 130px;
+    margin-bottom: 5px;
+}
+
+.coursecontent .learnimg-box .img-box img {
+    display: block;
+    width: 100%;
+    height: 130px;
+}
+
+.coursecontent .learnimg-box h3 {
+    height: 48px;
+    padding: 0 10px;
+    overflow: hidden;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.learnimg-box a h3,
+.learnimg-box a:hover h3,
+.learnimg-box a:visited h3 {
+    color: #273346;
+}
+
+.learnimg-box .imgboxfoot {
+    background: #fff;
+    height: 30px;
+    line-height: 30px;
+    font-size: 12px;
+    color: #a9a9a9;
+    padding: 0 10px;
+    position: absolute;
+    bottom: 0;
+    width: 210px;
+    clear: both;
+    left: 0;
+    z-index: 50;
+}
+
+.learnimg-box .imgboxfoot .minandtime {
+    float: right
+}
+
+.learnimg-box .img-pop {
+    width: 230px;
+    height: 210px;
+    padding: 10px 0;
+    position: absolute;
+    top: 230px;
+    left: 0;
+    z-index: 40px;
+    background: #fff;
+}
+
+.learnimg-box .img-pop blockquote p{
+	padding: 10px;
+	font-size: 12px;
+	line-height: 16px;
+	height: 85px;
+	overflow: hidden;
+	color: #8d8d8d;
+}
+
+.learnimg-box .img-pop .time-user-number{
+	padding: 10px;
+	font-size: 12px;
+	line-height: 16px;
+	color: #8d8d8d;
+}
+
+.learnimg-box .img-pop .time-user-number span:nth-child(2){
+	float: right;
+}

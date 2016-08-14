@@ -1,0 +1,434 @@
+body {
+    background-color: #000;
+    font-family: "微软雅黑";
+    font-weight: 200;
+}
+
+h1,
+h3,
+h5 {
+    font-family: "微软雅黑";
+    font-weight: 100;
+    color: #fff;
+}
+
+p {
+    color: #446F6F;
+}
+
+li {
+    list-style: none;
+    color: #fff;
+}
+
+header {
+    height: 80px;
+    background-image: url(../imgs/header.gif);
+}
+
+.logo_img {
+    display: block;
+    line-height: 80px;
+    float: left;
+}
+
+.follow {
+    float: right;
+    z-index: 323;
+}
+
+.follow p {
+    width: 100px;
+    font-size: 20px;
+    color: #636F6F;
+    line-height: 80px;
+    float: left;
+}
+
+.follow a {
+    display: inline-block;
+    height: 23px;
+    width: 23px;
+    float: left;
+    margin-right: 5px;
+    line-height: 80px;
+}
+
+.follow img:hover {
+    background: #EF6F53;
+}
+
+nav {
+    color: #fff;
+    font-size: 18px;
+    font-family: "arial";
+    font-weight: 100;
+}
+
+.nav li a {
+    color: #fff;
+    font-family: "微软雅黑";
+    font-weight: 100;
+    height: 50px;
+}
+
+
+/* .nav li a:hover,.nav li a:active,.nav li a:visited {
+    background-color: transparent;
+    color: #EF6F53;
+} */
+
+.nav li a:hover {
+    color: #EF6F53;
+}
+
+.nav li a:visited {
+    background-color: #000;
+}
+
+.nav li.active a {
+    color: #EF6F53;
+}
+
+#picShow {
+    width: 95%;
+    height: 100%;
+    position: relative;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+#picShow li {
+    list-style: none;
+}
+
+#pic {
+    position: relative;
+    width: 100%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+}
+
+#pic li:nth-child(1) {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+#pic li:nth-child(2),
+#pic li:nth-child(3) {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 40px;
+}
+
+#pic img {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+#pic_info {
+    position: relative;
+    margin: 0 auto 10px;
+    text-align: center;
+}
+
+#pic_info li:nth-child(1) {
+    display: block;
+    width: 60%;
+    height: 100%;
+    margin-left: 20%;
+}
+
+#pic_info li:nth-child(2),
+#pic_info li:nth-child(3) {
+    display: block;
+    width: 60%;
+    position: absolute;
+    top: -20px;
+    left: 20%;
+    opacity: 0;
+}
+
+#pic_info h1 {
+    font-size: 2em;
+    color: #fff;
+}
+
+#pic_info h1,
+#pic_info h3 {
+    text-align: center;
+}
+
+#pic_info .btn_left,
+#pic_info .btn_right {
+    font-size: 6em;
+    color: #fff;
+    cursor: pointer;
+    z-index: 23;
+}
+
+#pic_info .btn_left {
+    position: absolute;
+    top: -40px;
+    left: 50px;
+}
+
+#pic_info .btn_right {
+    position: absolute;
+    top: -40px;
+    right: 10px;
+}
+
+#content .imgList {
+    margin-top: 4em;
+}
+
+#content .imgList .img_btn {
+    display: block;
+    width: 99%;
+    height: 40px;
+    color: #fff;
+    font-size: 20px;
+    background: #0C0C0C;
+    line-height: 40px;
+    text-align: center;
+    font-family: "微软雅黑";
+    font-weight: 100;
+    text-decoration: none;
+}
+
+#content .imgList .img_btn:hover {
+    background: #2F2929;
+}
+
+.line {
+    height: 72px;
+    background: url(../imgs/line.png) repeat-x center;
+    overflow: hidden;
+}
+
+.content_info {
+    color: #fff;
+    font-family: "微软雅黑";
+    font-weight: 200;
+}
+
+.content_info h1 {
+    font-weight: 100;
+    font-size: 28px;
+}
+
+.content_info h3 {
+    font-size: 20px;
+    font-weight: 100;
+}
+
+.content_info h5 {
+    margin-top: 0;
+}
+
+.content_info p {
+    color: #4F4F4F;
+    font-weight: 300;
+}
+
+.welcome h1,
+.welcome h3 {
+    color: #fff;
+}
+
+.welcome a {
+    display: block;
+    width: 115px;
+    height: 40px;
+    background: #EF6F53;
+    color: #fff;
+    font-size: 20px;
+    text-align: center;
+    line-height: 40px;
+    text-decoration: none;
+}
+
+.welcome a:hover {
+    background-color: #636F6F;
+}
+
+.ourBreeds .title {
+    width: 45px;
+    height: 63px;
+    background: url(../imgs/number.png) no-repeat center;
+    font-size: 20px;
+    line-height: 60px;
+    font-weight: 400;
+}
+
+.content_info .border_1 {
+    border-top: 1px dashed #333333;
+    margin: 20px 0;
+}
+
+.ourBreeds a,
+.events a {
+    color: #C2684B;
+}
+
+footer {
+    color: #444444;
+    font-family: "微软雅黑";
+    padding-bottom: 30px;
+}
+
+footer dt {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 100;
+    margin-bottom: 15px;
+}
+
+footer .whyUs dd {
+    padding-left: 20px;
+    background: url(../imgs/marker-1.gif) no-repeat left center;
+}
+footer .whyUs dd:hover{
+    color: #C96850;
+    cursor: pointer;
+}
+footer dd {
+    line-height: 25px;
+    height: 25px;
+}
+
+footer .news input {
+    width: 165px;
+    height: 25px;
+    border: none;
+    background: #1A1A1A;
+    padding: 3px 10px;
+    position: relative;
+}
+
+footer .news a {
+    display: block;
+    width: 25px;
+    height: 25px;
+    background: url(../imgs/search.gif) no-repeat center;
+    background-color: #EF6F53;
+    position: absolute;
+    top: 48px;
+    left: 180px;
+}
+
+.stallions_h1 {
+    color: #fff;
+}
+
+.nav li a:hover {
+    background-color: #000;
+}
+
+.page_2_content {
+    line-height: 25px;
+}
+
+.page_2_content h1,
+h3,
+h5 {
+    color: #fff;
+    font-weight: 100;
+    line-height: 25px;
+}
+
+.page_2_content h1 {
+    margin-bottom: 20px;
+}
+
+.page_2_ul1 {
+    padding: 0;
+}
+
+.page_2_ul1 li {
+    padding-left: 20px;
+    background: url(../imgs/marker-3.gif) no-repeat 0px center;
+    line-height: 30px;
+}
+
+.page_2_ul1 li:hover {
+    color: #C96F53;
+    cursor: pointer;
+}
+
+.Gallety_big {
+    position: relative;
+    width: 95%;
+    height: 580px;
+    overflow: hidden;
+    margin: 0 auto;
+    margin-bottom: 3em;
+}
+
+.Gallety_big li {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.Gallety_small img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin-bottom: 2em;
+    cursor: pointer;
+}
+
+.contact {
+    width: 60%;
+    margin: 0 auto;
+    text-align: center;
+    color: #446F6F;
+}
+
+.contact h2 {
+    color: #fff;
+    font-weight: 100;
+}
+
+.contact label {
+    width: 80px;
+    height: 20px;
+    line-height: 20px;
+    margin-bottom: 20px;
+}
+
+.contact input,
+.contact textarea {
+    width: 50%;
+    background: #1A1A1A;
+    border: none;
+}
+
+.contact .mes input{
+    height: 200px;
+}
+
+.send{
+    display: block;
+    width: 120px;
+    height: 40px;
+    background: #EF6F53;
+    color: #fff;
+    font-size: 20px;
+    line-height: 40px;
+    margin: 0 auto;
+    margin-top: 20px;
+    text-decoration: none;
+}
+
+.send:hover{
+    background: #636F6F;
+     text-decoration: none;
+     color: #fff;
+}

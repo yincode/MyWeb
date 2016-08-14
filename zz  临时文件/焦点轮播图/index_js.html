@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>焦点轮播图</title>
+    <style type="text/css">
+    * {
+        padding: 0;
+        margin: 0;
+    }
+    
+    li {
+        list-style: none;
+    }
+    
+    a {
+        text-decoration: none;
+    }
+    
+    body {
+        background-color: #AFB8C5;
+    }
+    
+    #div1 {
+        width: 600px;
+        height: 400px;
+        margin: 50px auto;
+        position: relative;
+    }
+    
+    #div1 .img li {
+        position: absolute;
+        left: 0;
+        top: 0;
+        opacity: 0;
+    }
+    
+    #div1 .num {
+        position: absolute;
+        bottom: 30px;
+        left: 240px;
+    }
+    
+    #div1 .num li {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: #252525;
+        display: inline-block;
+        text-align: center;
+        cursor: pointer;
+        color: #fff;
+        font-size: 12px;
+        line-height: 20px;
+    }
+    
+    #div1 .num .active {
+        background: #E36628;
+    }
+    
+    .btn_left,
+    .btn_right {
+        width: 40px;
+        height: 80px;
+        position: absolute;
+        top: 150px;
+        font-size: 80px;
+        color: #fff;
+        cursor: pointer;
+        display: none;
+    }
+    
+    .btn_left {
+        left: 30px;
+    }
+    
+    .btn_right {
+        right: 30px;
+    }
+    </style>
+    <script type="text/javascript" src="move.js"></script>
+    <script type="text/javascript">
+    window.onload = function() {
+
+        var oDiv = document.getElementById('div1');
+        var oImg = oDiv.getElementsByTagName('ul')[0];
+        var aImg = oImg.getElementsByTagName('li');
+        var oNum = oDiv.getElementsByTagName('ul')[1];
+        var aNum = oNum.getElementsByTagName('li');
+        var oBtnL = oDiv.getElementsByTagName('div')[0];
+        var oBtnR = oDiv.getElementsByTagName('div')[1];
+
+        var now = 0;
+       
+        startMove(aImg[0],{opacity:100});
+
+        oDiv.onmouseover = function() {
+            oBtnL.style.display = 'block';
+            oBtnR.style.display = 'block';
+            clearInterval(timer);
+        }
+
+        oDiv.onmouseout = function() {
+            oBtnL.style.display = 'none';
+            oBtnR.style.display = 'none';
+            timer = setInterval(oBtnR.onclick, 1000);
+        }
+
+
+
+        
+        for (var i = 0; i < aNum.length; i++) {
+            aNum[i].index = i;
+            aNum[i].onmouseover = function() {
+                now = this.index;
+
+                tabs();
+            }
+        }
+
+        oBtnR.onclick = function() {
+            now++;
+
+            if (now == aNum.length) {
+                now = 0;
+            }
+
+            tabs();
+        }
+
+        oBtnL.onclick = function() {
+            now--;
+
+            if (now == -1) {
+                now = aNum.length - 1;
+            }
+
+            tabs();
+        }
+
+
+        var timer = setInterval(oBtnR.onclick, 1000);
+
+        function tabs() {
+            for (var i = 0; i < aNum.length; i++) {
+                aNum[i].className = '';
+                startMove(aImg[i], {
+                    opacity: 0
+                })
+            }
+            aNum[now].className = 'active';
+            startMove(aImg[now], {
+                opacity: 100
+            })
+        }
+
+
+    }
+    </script>
+</head>
+
+<body>
+    <div id="div1">
+        <ul class="img">
+            <li>
+                <a href="#"><img src="imgs/pic01.jpg"></a>
+            </li>
+            <li>
+                <a href="#"><img src="imgs/pic02.jpg"></a>
+            </li>
+            <li>
+                <a href="#"><img src="imgs/pic03.jpg"></a>
+            </li>
+            <li>
+                <a href="#"><img src="imgs/pic04.jpg"></a>
+            </li>
+        </ul>
+        <ul class="num">
+            <li class="active">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+        </ul>
+        <div class="btn_left">
+            <</div>
+                <div class="btn_right">></div>
+        </div>
+</body>
+
+</html>

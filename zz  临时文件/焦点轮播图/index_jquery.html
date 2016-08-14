@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>焦点轮播图</title>
+    <style type="text/css">
+    * {
+        padding: 0;
+        margin: 0;
+    }
+    
+    li {
+        list-style: none;
+    }
+    
+    a {
+        text-decoration: none;
+    }
+    
+    body {
+        background-color: #AFB8C5;
+    }
+    
+    #div1 {
+        width: 600px;
+        height: 400px;
+        margin: 50px auto;
+        position: relative;
+    }
+    
+    #div1 .img li {
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+    
+    #div1 .num {
+        position: absolute;
+        bottom: 30px;
+        left: 240px;
+    }
+    
+    #div1 .num li {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: #252525;
+        display: inline-block;
+        text-align: center;
+        cursor: pointer;
+        color: #fff;
+        font-size: 12px;
+        line-height: 20px;
+    }
+    
+    #div1 .num .active {
+        background: #E36628;
+    }
+    
+    .btn_left,
+    .btn_right {
+        width: 40px;
+        height: 80px;
+        position: absolute;
+        top: 150px;
+        font-size: 80px;
+        color: #fff;
+        cursor: pointer;
+        display: none;
+    }
+    
+    .btn_left {
+        left: 30px;
+    }
+    
+    .btn_right {
+        right: 30px;
+    }
+    </style>
+    <script type="text/javascript" src="jquery-1.12.3.min.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        var now = 0;
+        var length = $('.img li').size();
+
+        $('.img li').eq(0).show().siblings().hide();
+
+        $('.num li').mouseover(function() {
+            var index = $(this).index();
+            now = index;
+
+            tabs();
+        });
+
+        $('#div1').hover(function() {
+            $('.btn_left,.btn_right').show();
+            clearInterval(timer);
+
+        }, function() {
+            $('.btn_left,.btn_right').hide();
+            timer = setInterval(next, 1000);
+        });
+
+        $('.btn_left').on('click', function() {
+            now--;
+            if (now == -1) {
+                now = length - 1;
+            }
+
+            tabs()
+        });
+
+        $('.btn_right').click(next);
+
+        var timer = setInterval(next, 1000);
+
+        function next() {
+            now++;
+            if (now == length) {
+                now = 0;
+            };
+
+            tabs();
+        };
+
+
+        function tabs() {
+            $('.num li').eq(now).addClass('active').siblings().removeClass('active');
+            $('.img li').eq(now).stop().fadeIn(300).siblings().stop().fadeOut(300);
+        }
+    })
+    </script>
+</head>
+
+<body>
+    <div id="div1">
+        <ul class="img">
+            <li>
+                <a href="#"><img src="imgs/pic01.jpg"></a>
+            </li>
+            <li>
+                <a href="#"><img src="imgs/pic02.jpg"></a>
+            </li>
+            <li>
+                <a href="#"><img src="imgs/pic03.jpg"></a>
+            </li>
+            <li>
+                <a href="#"><img src="imgs/pic04.jpg"></a>
+            </li>
+        </ul>
+        <ul class="num">
+            <li class="active">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+        </ul>
+        <div class="btn_left">
+            <</div>
+                <div class="btn_right">></div>
+        </div>
+</body>
+
+</html>
