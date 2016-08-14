@@ -1,0 +1,25 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+#wrap {
+    position: relative;
+}
+
+.cont {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.btn {
+    position: fixed;
+    bottom: 20%;
+    right: 5%;
+    padding: 5px;
+    display: none;
+}
+
+.btn:hover {
+    background: #E67F7F;
+}

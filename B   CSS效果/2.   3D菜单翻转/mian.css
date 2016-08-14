@@ -1,0 +1,65 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+nav {
+    width: 1030px;
+    margin: 50px auto;
+    background: #fdfdfd;
+    overflow: hidden;
+}
+
+nav:after {
+    clear: both;
+    display: block;
+    content: '';
+    overflow: hidden;
+}
+
+nav .items {
+    width: 200px;
+    height: 100px;
+    margin-right: 5px;
+    float: left;
+    perspective: 4000px;
+}
+
+nav .items a {
+    display: block;
+    height: 100px;
+    text-decoration: none;
+    transition: all .5s;
+    transform-style: preserve-3d;
+}
+
+nav .items a p {
+    height: 100px;
+    line-height: 100px;
+    color: #fff;
+    font-family: "微软雅黑";
+    text-align: center;
+    font-size: 20px;
+    border-radius: 2px;
+    transition: all .5s;
+}
+
+nav .items a p:nth-child(1) {
+    background-color: #E8471E;
+    transform: translateZ(50px);
+}
+
+nav .items a p:last-child {
+    transform: translateZ(50px) rotateX(-90deg);
+    background: #F6334F;
+    margin-top: -50px;
+}
+
+nav .items a:hover {
+    transform: rotateX(90deg);
+}
+
+nav .items a:hover p:last-child {
+    transform: translateZ(0) rotateX(-90deg);
+    margin-top: 0;
+}

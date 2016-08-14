@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>marquee实现信息滚动</title>
+</head>
+<link rel="stylesheet" type="text/css" href="css/css.css">
+
+<body>
+    <div class="box">
+        <dl>
+            <dt>文字滚动实例（默认）</dt>
+            <dd>
+                <marquee>我默认向左滚动。。。。。。。。。。</marquee>
+            </dd>
+        </dl>
+        <dl>
+            <dt>文字滚动实例（向右）</dt>
+            <dd>
+                <marquee direction="right" scrolldelay="500">我向右滚动。。。。。。。。。。</marquee>
+            </dd>
+        </dl>
+        <dl>
+            <dt>文字滚动实例（默认方向，滚动方式为alternate，循环3次，速度为2）</dt>
+            <dd>
+                <marquee behavior="alternate" loop="3" scrollamount="2">我来回滚动。。。。。。。。。。</marquee>
+            </dd>
+        </dl>
+        <dl>
+            <dt>文字滚动实例（向上，背景色为#ccff66,设置了背景宽度和高度）</dt>
+            <dd>
+                <marquee direction="up" bgcolor="#CCFF66" width="200px" height="100px">我默认向左滚动。。。。。。。。。。</marquee>
+            </dd>
+        </dl>
+    </div>
+</body>
+
+</html>

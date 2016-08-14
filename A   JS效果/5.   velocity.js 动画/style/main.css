@@ -1,0 +1,87 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+body{
+	height: 2000px;
+}
+
+#container{
+	width: 400px;
+	height: 600px;
+	border: 1px solid #ddd;
+	margin: 10px auto;
+	position: relative;
+}
+
+.zheng{
+}
+.logo{
+	position: absolute;
+	width: 120px;
+	height: 120px;
+	border-radius: 50%;
+	top: 220px;
+	left: 140px;
+
+}
+
+.zheng .box{
+	position: relative;
+	margin-top: 60px;
+	text-align: center;
+	font-family: "微软雅黑";
+	line-height: 30px;
+	z-index: 2;
+}
+
+.zheng .box .btn{
+	width: 80%;
+	height: 40px;
+	background: #356DE3;
+	margin-top: 50px;
+	font-size: 16px;
+	color: #fff;
+	font-weight: 300;
+	border: none;
+	cursor: pointer;	
+}
+
+#container .bei{
+position: absolute;
+top: 0;
+left: 0;
+}
+
+#container  .close{
+	right: 10px;
+	top: 5px;
+	position: absolute;
+	font-weight: bold;
+	cursor: pointer;
+	display: none;	
+} 
+
+#container .bei .img{
+	margin-top: 130px;
+}
+#container .bei .img img{
+	display: block;
+	width: 180px;
+	height: 120px;
+	float: left;
+	margin: 10px;
+}
+
+.bei .box{
+	position: absolute;
+	top: 50px;
+	left: 140px;
+	text-align: center;
+	line-height: 30px;
+
+}
+
+#container,.box,.logo,.bei img,.close{
+	opacity: 0;
+}

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <script type="text/javascript" src="move.js"></script>
+    <script type="text/javascript">
+    function getByClass(oParent, sClass) {
+        var aEle = oParent.getElementsByTagName('*');
+        var aResult = [];
+
+        for (var i = 0; i < aEle.length; i++) {
+            if (aEle[i].className == sClass) {
+                aResult.push(aEle[i]);
+            }
+        }
+
+        return aResult;
+    }
+
+    window.onload = function() {
+        var oDiv = document.getElementById('playimages');
+        var oNext = getByClass(oDiv, 'next')[0];
+        var oPrev = getByClass(oDiv, 'prev')[0];
+        var oMarkNext = getByClass(oDiv, 'mark_right')[0];
+        var oMarkPrev = getByClass(oDiv, 'mark_left')[0];
+
+        var oBigPic = getByClass(oDiv, 'big_pic')[0];
+        var aBigLi = oBigPic.getElementsByTagName('li');
+
+        var oSmallPic = getByClass(oDiv, 'small_pic')[0];
+        var oSmallUl = oSmallPic.getElementsByTagName('ul')[0];
+        var aSmallLi = oSmallPic.getElementsByTagName('li');
+
+        oSmallUl.style.width = aSmallLi.length * aSmallLi[0].offsetWidth + "px";
+
+
+        var nowZIndex = 2;
+
+        var now = 0;
+
+        //左右按钮
+        oMarkNext.onmouseover = oNext.onmouseover = function() {
+            startMove(oNext, 'opacity', 100);
+        }
+        oMarkNext.onmouseout = oNext.onmouseout = function() {
+            startMove(oNext, 'opacity', 0);
+        }
+
+        oMarkPrev.onmouseover = oPrev.onmouseover = function() {
+            startMove(oPrev, 'opacity', 100);
+        }
+        oMarkPrev.onmouseout = oPrev.onmouseout = function() {
+            startMove(oPrev, 'opacity', 0);
+        }
+
+        // 大图切换
+        for (var i = 0; i < aSmallLi.length; i++) {
+            aSmallLi[i].index = i;
+            aSmallLi[i].onclick = function() {
+                if (this.index == now) return;
+                now = this.index;
+
+                tabs();
+            }
+
+            aSmallLi[i].onmouseover = function() {
+                startMove(aSmallLi[this.index], 'opacity', 100);
+            }
+
+            aSmallLi[i].onmouseout = function() {
+                if (this.index != now) {
+                    startMove(aSmallLi[this.index], 'opacity', 60);
+                }
+            }
+        }
+
+        function tabs() {
+            for (var i = 0; i < aSmallLi.length; i++) {
+                startMove(aSmallLi[i], 'opacity', 60);
+            }
+
+            startMove(aSmallLi[now], 'opacity', 100);
+
+            aBigLi[now].style.zIndex = nowZIndex++;
+
+            aBigLi[now].style.height = 0;
+            startMove(aBigLi[now], 'height', 320);
+
+            if (now == 0) {
+                startMove(oSmallUl, 'left', 0);
+            } else if (now == aSmallLi.length - 1) {
+                startMove(oSmallUl, 'left', -(now - 2) * aSmallLi[0].offsetWidth);
+            } else {
+                startMove(oSmallUl, 'left', -(now - 1) * aSmallLi[0].offsetWidth);
+            }
+        }
+
+        oNext.onclick = function() {
+            now++;
+            if (now == aSmallLi.length) {
+                now = 0;
+            }
+
+            tabs();
+        }
+
+        oPrev.onclick = function() {
+            now--;
+            if (now == -1) {
+                now = aSmallLi.length - 1;
+            }
+
+            tabs();
+        }
+
+        var timer = setInterval(oNext.onclick, 2000);
+
+        oDiv.onmouseover = function() {
+            clearInterval(timer);
+        }
+
+        oDiv.onmouseout = function() {
+            timer = setInterval(oNext.onclick, 2000);
+        }
+
+    }
+    </script>
+</head>
+
+<body>
+    <div id="playimages" class="play">
+        <ul class="big_pic">
+            <div class="next"></div>
+            <div class="prev"></div>
+            <div class="text">加载图片说明</div>
+            <div class="length">计算图片数量</div>
+            <a class="mark_left" href="javascript:;"></a>
+            <a class="mark_right" href="javascript:;"></a>
+            <div class="bg"></div>
+            <li style="z-index: 1"><img src="images/1.jpg" alt=""></li>
+            <li><img src="images/2.jpg" alt=""></li>
+            <li><img src="images/3.jpg" alt=""></li>
+            <li><img src="images/4.jpg" alt=""></li>
+            <li><img src="images/5.jpg" alt=""></li>
+            <li><img src="images/6.jpg" alt=""></li>
+        </ul>
+        <div class="small_pic">
+            <ul style="width: 390px;">
+                <li style="filter: 100; opacity: 100;"><img src="images/1.jpg" alt=""></li>
+                <li><img src="images/2.jpg" alt=""></li>
+                <li><img src="images/3.jpg" alt=""></li>
+                <li><img src="images/4.jpg" alt=""></li>
+                <li><img src="images/5.jpg" alt=""></li>
+                <li><img src="images/6.jpg" alt=""></li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>

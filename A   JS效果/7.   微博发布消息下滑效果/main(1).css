@@ -1,0 +1,36 @@
+*{
+	margin:0;
+	padding: 0;
+}
+
+textarea{
+	width: 360px;
+	display: block;
+	margin: 0 auto;
+	padding: 20px;
+}
+
+input{
+	width: 400px;
+	height: 40px;
+	background: #FD8F2F;
+	display: block;
+	margin: 10px auto;
+	border: none;
+}
+#ul1{
+	width: 400px;
+	height: 600px;
+	border: 1px solid #ccc;
+	overflow: hidden;
+	margin: 10px auto;
+}
+
+#ul1 li{
+	border-bottom: 1px dashed #7B7B7B;
+	margin: 6px;
+	padding: 4px;
+	font-size: 14px;
+	opacity: 0.4;
+	filter: alpha(opacity:40);
+}

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>京东首页焦点图</title>
+</head>
+<style type="text/css">
+body,
+ul,
+li,
+div {
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    list-style: none;
+}
+
+body {
+    background: #A9A8C8;
+}
+
+#outside {
+    width: 730px;
+    height: 454px;
+    margin: 100px auto;
+    position: relative;
+}
+
+#outside .img li {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: none;
+}
+
+#outside .num {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+}
+
+#outside .num li {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #A5A5A5;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+    color: #fff;
+    margin: 6px;
+    padding: 4px;
+    font-size: 12px;
+    line-height: 12px;
+    text-align: center;
+}
+
+#outside .num li.active {
+    background: #9A2727;
+}
+
+#outside .btn_left,
+#outside .btn_right {
+    width: 40px;
+    height: 80px;
+    background: #939393;
+    z-index: 2;
+    position: absolute;
+    top: 180px;
+    font-size: 50px;
+    color: #fff;
+    line-height: 80px;
+    text-align: center;
+    opacity: 0.8;
+    cursor: pointer;
+    display: none;
+}
+
+#outside .btn_left {
+    left: 0;
+}
+
+#outside .btn_right {
+    right: 0;
+}
+
+#outside:hover .btn_right,
+#outside:hover .btn_left {
+    display: block;
+}
+</style>
+<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+    //初始化
+    var size = $(".img li").size();
+    for (var i = 1; i < size + 1; i++) {
+        var li = "<li>" + i + "</li>";
+        $(".num").append(li);
+    }
+
+    //手动控制轮播图
+    $(".img li").eq(0).show();
+    $(".num li").eq(0).addClass("active");
+    $(".num li").mouseover(function() {
+        $(this).addClass('active').siblings().removeClass("active");
+
+        var index = $(this).index();
+        	 i = index;
+        $(".img li").eq(index).stop().fadeIn(300).siblings().stop().fadeOut(300);
+    });
+
+    //自动轮播
+    var i = 0;
+    var timer = setInterval(moveRight, 1500);
+
+    //向左运动函数
+    function moveLeft() {
+        i--;
+        if (i == -1) {
+            i = size - 1;
+        }
+
+        $(".num li").eq(i).addClass("active").siblings().removeClass('active');
+        $(".img li").eq(i).stop().fadeIn(300).siblings().stop().fadeOut(300);
+    }
+
+    //向右运动
+    function moveRight() {
+        i++;
+        if (i > size) {
+            i = 0;
+        }
+
+        $(".num li").eq(i).addClass('active').siblings().removeClass('active');
+        $(".img li").eq(i).fadeIn(300).siblings().fadeOut(300);
+    }
+
+    //左边按钮点击切换
+    $(".btn_left").click(function(){
+    	moveLeft();
+    });
+
+     $(".btn_right").click(function(){
+    	moveRight();
+    });
+
+     //定时器的开始与结束
+     $("#outside").hover(function(){
+     	clearInterval(timer);
+     },function(){
+     	timer=setInterval(moveRight,1500)
+     })
+})
+</script>
+
+<body>
+    <div id="outside">
+        <ul class="img">
+            <li>
+                <a href="#"><img src="images/1.jpg" alt=""></a>
+            </li>
+            <li>
+                <a href="#"><img src="images/2.jpg" alt=""></a>
+            </li>
+            <li>
+                <a href="#"><img src="images/3.jpg" alt=""></a>
+            </li>
+            <li>
+                <a href="#"><img src="images/4.jpg" alt=""></a>
+            </li>
+            <li>
+                <a href="#"><img src="images/5.jpg" alt=""></a>
+            </li>
+            <li>
+                <a href="#"><img src="images/6.jpg" alt=""></a>
+            </li>
+        </ul>
+        <ul class="num">
+        </ul>
+        <div class="btn_left">
+            <</div>
+                <div class="btn_right">></div>
+</body>
+
+</html>

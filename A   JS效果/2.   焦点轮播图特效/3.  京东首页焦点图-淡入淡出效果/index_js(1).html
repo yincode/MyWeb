@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>京东首页焦点图</title>
+</head>
+<style type="text/css">
+body,
+ul,
+li,
+div {
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    list-style: none;
+}
+
+body {
+    background: #A9A8C8;
+}
+
+#outside {
+    width: 730px;
+    height: 454px;
+    margin: 100px auto;
+    position: relative;
+}
+
+#outside .img li {
+    position: absolute;
+    left: 0;
+    top: 0;
+   opacity: 0;
+   filter: alpha(opacity:0);
+}
+
+#outside .num {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+}
+
+#outside .num li {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #A5A5A5;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+    color: #fff;
+    margin: 6px;
+    padding: 4px;
+    font-size: 12px;
+    line-height: 12px;
+    text-align: center;
+}
+
+#outside .num li.active {
+    background: #9A2727;
+}
+
+#outside .btn_left,
+#outside .btn_right {
+    width: 40px;
+    height: 80px;
+    background: #939393;
+    z-index: 2;
+    position: absolute;
+    top: 180px;
+    font-size: 50px;
+    color: #fff;
+    line-height: 80px;
+    text-align: center;
+    opacity: 0.8;
+    cursor: pointer;
+    display: none;
+}
+
+#outside .btn_left {
+    left: 0;
+}
+
+#outside .btn_right {
+    right: 0;
+}
+
+#outside:hover .btn_right,
+#outside:hover .btn_left {
+    display: block;
+}
+</style>
+<script type="text/javascript" src="js/move.js"></script>
+<script type="text/javascript">
+window.onload = function() {
+    var oDiv = document.getElementById('outside');
+    var oImg = oDiv.getElementsByTagName('ul')[0];
+    var oNum = oDiv.getElementsByTagName('ul')[1];
+    var aImg = oImg.getElementsByTagName('li');
+    var aNum = oNum.getElementsByTagName('li');
+    var oRight = oDiv.getElementsByTagName('div')[1];
+    var oLeft = oDiv.getElementsByTagName('div')[0];
+
+    var now = 0;
+
+    //初始化
+    var length = aImg.length;
+    for (var i = 1; i < length + 1; i++) {
+        var li = document.createElement('li');
+        li.innerHTML = i;
+        oNum.appendChild(li);
+    }
+    startMove(aImg[0],{opacity:100});
+    // aImg[0].style.opacity = 1;
+    aNum[0].className = "active";
+
+    //手动控制轮播图
+    for (var i = 0; i < length; i++) {
+        aNum[i].index = i;
+        aNum[i].onmouseover = function() {
+            now = this.index;
+
+            tabs();
+        }
+    }
+
+    //向右运动
+    oRight.onclick = function() {
+        now++;
+        if (now == length) {
+            now = 0;
+        }
+
+        tabs();
+    }
+
+    //向左运动
+    oLeft.onclick = function() {
+        now--;
+        if (now == -1) {
+            now = length - 1;
+        }
+
+        tabs();
+    }
+
+    //自动切换
+    var timer = null;
+    timer = setInterval(oRight.onclick, 1500);
+
+    //自动播放停止
+    oDiv.onmouseover = function() {
+        clearInterval(timer);
+    }
+    oDiv.onmouseout = function() {
+        timer = setInterval(oRight.onclick, 1500);
+    }
+
+    //切换函数
+    function tabs() {
+        for (var j = 0; j < length; j++) {
+            aNum[j].className = '';
+            startMove(aImg[j],{opacity:0});
+            // aImg[j].style.opacity = 0;
+        }
+        aNum[now].className = 'active';
+
+        startMove(aImg[now],{opacity:100});
+        // aImg[now].style.display = "block";
+    }
+
+}
+</script>
+
+<body>
+    <div id="outside">
+        <ul class="img">
+            <li>
+                <a href="#"><img src="images/1.jpg" alt=""></a>
+            </li>
+            <li>
+                <a href="#"><img src="images/2.jpg" alt=""></a>
+            </li>
+            <li>
+                <a href="#"><img src="images/3.jpg" alt=""></a>
+            </li>
+            <li>
+                <a href="#"><img src="images/4.jpg" alt=""></a>
+            </li>
+            <li>
+                <a href="#"><img src="images/5.jpg" alt=""></a>
+            </li>
+            <li>
+                <a href="#"><img src="images/6.jpg" alt=""></a>
+            </li>
+        </ul>
+        <ul class="num">
+        </ul>
+        <div class="btn_left">
+            <</div>
+                <div class="btn_right">></div>
+</body>
+
+</html>

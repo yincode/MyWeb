@@ -1,0 +1,194 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>无缝轮播</title>
+    <style>
+    * {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+    
+    body {
+        background: #B2CBC8;
+    }
+    
+    .banner {
+        margin: 100px auto;
+        width: 550px;
+        height: 300px;
+        overflow: hidden;
+        position: relative;
+    }
+    
+    .banner .img {
+        width: 5000px;
+        position: absolute;
+        left: 0px;
+        top: 0;
+    }
+    
+    .banner .img li {
+        float: left;
+    }
+    
+    .banner .num {
+        position: absolute;
+        width: 100%;
+        bottom: 10px;
+        left: 0;
+        text-align: center;
+        font-size: 0px;
+    }
+    
+    .banner .num li {
+        width: 10px;
+        height: 10px;
+        background: #888;
+        border-radius: 50%;
+        display: inline-block;
+        margin: 0 3px;
+        cursor: pointer;
+    }
+    
+    .banner .num li.on {
+        background: #F60;
+    }
+    
+    .banner .btn {
+        width: 30px;
+        height: 50px;
+        background: rgba(0, 0, 0, 0.5);
+        position: absolute;
+        top: 50%;
+        margin-top: -25px;
+        cursor: pointer;
+        text-align: center;
+        line-height: 50px;
+        color: #fff;
+        font-size: 40px;
+        font-family: "宋体";
+        display: none;
+    }
+    
+    .banner:hover .btn {
+        display: block;
+    }
+    
+    .banner .btn_l {
+        left: 0;
+    }
+    
+    .banner .btn_r {
+        right: 0;
+    }
+    </style>
+    <script type="text/javascript" src="js/move.js"></script>
+    <script type="text/javascript">
+    window.onload = function() {
+        var oDiv = document.getElementsByTagName('div')[0];
+        var oImg = oDiv.getElementsByTagName('ul')[0];
+        var oNum = oDiv.getElementsByTagName('ul')[1];
+        var aImg = oImg.getElementsByTagName("li");
+        var aNum = oNum.getElementsByTagName("li");
+        var oLeft = oDiv.getElementsByTagName('div')[0];
+        var oRight = oDiv.getElementsByTagName('div')[1];
+
+        //初始化
+        var now = 0;
+        var newLi = document.createElement('li');
+        var LiA = document.createElement('a');
+        LiA.setAttribute('href', '#');
+        var Aimg = document.createElement('img');
+        Aimg.setAttribute('src', 'images/1.jpg');
+        LiA.appendChild(Aimg);
+        newLi.appendChild(LiA);
+        oImg.appendChild(newLi);
+
+        var length = aImg.length;
+
+        for (var i = 0; i < length - 1; i++) {
+            var aNumLi = document.createElement('li');
+            oNum.appendChild(aNumLi);
+        }
+
+        aNum[0].className = 'on';
+
+        //鼠标滑入圆点
+        for (var i = 0; i < length - 1; i++) {
+            aNum[i].index = i;
+            aNum[i].onmouseover = function() {
+                now = this.index;
+
+                move();
+            }
+
+        }
+
+        //向左运动
+        oLeft.onclick = function() {
+            now++;
+            move();
+        }
+
+        //向右运动
+        oRight.onclick = function() {
+            now--;
+            move();
+        }
+
+        //运动函数
+        function move() {
+            if (now == -1) {
+                oImg.style.left=-(length - 1) * 550;
+              
+                now = length - 2;
+            }
+
+            if (now == length) {
+                oImg.style.left=0;
+
+                now = 1;
+            }
+
+
+            for (var i = 0; i < length - 1; i++) {
+                aNum[i].className = '';
+            }
+            aNum[now].className = 'on';
+
+            startMove(oImg, {
+                left: -now * 550
+            });
+        }
+
+    }
+    </script>
+</head>
+
+<body>
+    <div class="banner">
+        <ul class="img">
+            <li>
+                <a href="#"><img src="images/1.jpg"></a>
+            </li>
+            <li>
+                <a href="#"><img src="images/2.jpg"></a>
+            </li>
+            <li>
+                <a href="#"><img src="images/3.jpg"></a>
+            </li>
+            <li>
+                <a href="#"><img src="images/4.jpg"></a>
+            </li>
+        </ul>
+        <ul class="num">
+        </ul>
+        <div class="btn btn_l">&lt;</div>
+        <div class="btn btn_r">&gt;</div>
+    </div>
+</body>
+
+</html>

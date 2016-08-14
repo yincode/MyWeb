@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>pic</title>
+    <style type="text/css">
+    body,
+    figure,
+    img,
+    figcaption,
+    p {
+        padding: 0;
+        margin: 0;
+    }
+    
+    figure {
+        position: relative;
+        font-family: "微软雅黑";
+        color: #fff;
+        height: 360px;
+        overflow: hidden;
+        float: left;
+    }
+    
+    figcaption {
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+    
+    @media screen and (min-width:1001px) {
+        figure {
+            width: 33.33%;
+        }
+    }
+    
+    @media screen and (max-width:1000px) and (min-width: 601px) {
+        figure {
+            width: 50%;
+        }
+    }
+    
+    @media screen and (max-width:600px) {
+        figure {
+            width: 100%;
+        }
+    }
+    
+    figure img {
+        opacity: 0.8;
+    }
+    
+    figure figcaption {
+        padding: 20px;
+    }
+    
+    figure p {
+        font-size: 14px;
+    }
+    
+    figure figcaption p {
+        transition: all 0.35s;
+    }
+    
+    figure img {
+        transition: all 0.35s;
+    }
+    
+    #pic01 {
+        background: #000000;
+    }
+    
+    #pic01 figure p {
+        font-size: 14px;
+        background: #fff;
+        margin: 5px;
+        color: #5E5E5E;
+        padding: 5px;
+    }
+    
+    #pic01 figcaption p {
+        transform: translate(-120px, 0);
+    }
+    
+    #pic01:hover figcaption p {
+        transform: translate(0, 0);
+    }
+    
+    #pic01:hover figcaption p:nth-child(1) {
+        transition-delay: 0.05s;
+    }
+    
+    #pic01:hover figcaption p:nth-child(2) {
+        transition-delay: 0.1s;
+    }
+    
+    #pic01:hover figcaption p:nth-child(3) {
+        transition-delay: 0.15s;
+    }
+    
+    #pic01:hover img {
+        transform: translate(-50px, 0);
+        opacity: 0.5;
+    }
+    
+    #pic02 {
+        background: #102F06;
+    }
+    
+    #pic02 div {
+        width: 80%;
+        height: 80%;
+        border: 2px solid #fff;
+        position: absolute;
+        top: 10%;
+        left: 10%;
+        transform: translate(0, -400px);
+        transition: all 0.35s;
+    }
+    
+    #pic02:hover div {
+        transform: translate(0, 0);
+        transform: rotate(230deg);
+    }
+    
+    #pic02 figcaption {
+        position: absolute;
+        top: 20%;
+        left: 20%;
+        opacity: 0;
+        transition: all 0.35s;
+    }
+    
+    #pic02:hover figcaption {
+        opacity: 1;
+    }
+    
+    #pic02 figcaption p {
+        transform: translate(0, 50px);
+        transition: all 0.35s;
+    }
+    
+    #pic02:hover figcaption p {
+        transform: translate(0, 0);
+    }
+    
+    #pic02:hover img {
+        transform: translate(-50px, -30px);
+        opacity: 0.5;
+    }
+    
+    #pic03 {
+        background: #1B1421;
+    }
+    
+    #pic03 figcaption {
+        position: absolute;
+        top: 30%;
+        left: 30%;
+        transform: skew(90deg);
+        transition: all 0.35s;
+    }
+    
+    #pic03:hover figcaption {
+        transform: skew(0deg);
+    }
+    
+    #pic03 img {
+        transition: all 0.35s;
+    }
+    
+    #pic03:hover img {
+        transform: translate(-50px, 0);
+        opacity: 0.5;
+    }
+
+    .pic04{
+    	background: #000;
+    }
+
+    .pic04 div {
+        width: 70%;
+        height: 70%;
+        border: 2px solid #fff;
+        position: absolute;
+        top: 15%;
+        left: 15%;
+        transition: all 0.35s;
+        transform: scale(1.2,1.2);
+        opacity: 0;
+    }
+
+    .pic04:hover div,.pic04:hover figcaption{
+    	transform: scale(1,1);
+    	opacity: 1;
+    }
+
+    .pic04 figcaption{
+    	transition: all 0.35s;
+    	position: absolute;
+    	top: 20%;
+    	left: 20%;
+    	opacity: 0;
+
+    }
+
+    .pic04 img{
+    	transform: scale(1);
+    }
+
+    .pic04:hover img{
+    	transform: scale(1.3);
+    	opacity: 0.5;
+    }
+    </style>
+</head>
+
+<body>
+    <figure id="pic01">
+        <img src="girl.jpg">
+        <figcaption>美女图片01
+            <p>注释注释01</p>
+            <p>注释注释01</p>
+            <p>注释注释01</p>
+        </figcaption>
+    </figure>
+    <figure id="pic02">
+        <img src="girl02.jpg">
+        <figcaption>美女图片02
+            <p>注释注释02</p>
+        </figcaption>
+        <div></div>
+    </figure>
+    <figure id="pic03">
+        <img src="girl03.jpg">
+        <figcaption>美女图片03
+            <p>注释注释03注释注释03注释注释03</p>
+        </figcaption>
+    </figure>
+    <figure class="pic04">
+        <img src="balloon-1373161_640.jpg">
+        <figcaption>美女图片03
+            <p>注释注释03注释注释03注释注释03</p>
+        </figcaption>
+        <div></div>
+    </figure>
+    <figure class="pic04">
+        <img src="poppy-1447203_640.jpg">
+        <figcaption>美女图片03
+            <p>注释注释03注释注释03注释注释03</p>
+        </figcaption>
+        <div></div>
+    </figure>
+    <figure class="pic04">
+        <img src="mesh-1363771_640.jpg">
+        <figcaption>美女图片03
+            <p>注释注释03注释注释03注释注释03</p>
+        </figcaption>
+        <div></div>
+    </figure>
+</body>
+
+</html>
