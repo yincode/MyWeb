@@ -16,7 +16,7 @@
         height: 400px;
         margin: 0 auto;
         position: relative;
-        --webkit-transform-style: preserve-3d;
+        -webkit-transform-style: preserve-3d;
     }
     
     .page {
@@ -33,8 +33,8 @@
     }
     
     #page1 {
-        --webkit-transform-origin:bottom;
-    	--webkit-transition: -webkit-transform 1s linear;
+        -webkit-transform-origin: bottom;
+        -webkit-transition: -webkit-transform 1s linear;
     }
     
     #page2,
@@ -42,14 +42,14 @@
     #page4,
     #page5,
     #page6 {
-        --webkit-transform-origin:bottom;
-    	--webkit-transition: -webkit-transform 1s linear;
-    	--webkit-transform: rotateX(90deg);
+        -webkit-transform-origin: bottom;
+        -webkit-transition: -webkit-transform 1s linear;
+        -webkit-transform: rotateX(90deg);
     }
-
-    #op{
-    	text-align: center;
-    	margin:40px auto;
+    
+    #op {
+        text-align: center;
+        margin: 40px auto;
     }
     </style>
 </head>
@@ -81,6 +81,39 @@
         <a href="javascript:next()">next</a>&nbsp;
         <a href="javascript:prev()">prev</a>
     </div>
+    <script type="text/javascript">
+    var curIndex = 1;
+
+    function next() {
+        if (curIndex == 6) {
+            return;
+        }
+
+        var curPage = document.getElementById('page' + curIndex);
+        curPage.style.webkitTransform = "rotateX(-90deg)";
+
+        curIndex++;
+
+        var nextPage = document.getElementById('page' + curIndex);
+        nextPage.style.webkitTransform = "rotateX(0deg)";
+
+    }
+
+    function prev() {
+        if (curIndex == 1) {
+            return;
+        }
+
+        var curPage=document.getElementById('page'+curIndex);
+        curPage.style.webkitTransform="rotateX(90deg)";
+
+        curIndex--;
+
+        var nextPage=document.getElementById('page'+curIndex);
+        nextPage.style.webkitTransform="rotateX(0deg)";
+
+    }
+    </script>
 </body>
 
 </html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="jquery-2.2.3.min.js"></script>
+</head>
+
+<body>
+    <ul id="ul1">
+        <li>11</li>
+        <li>22</li>
+        <li>33</li>
+        <li>44</li>
+        <li>55</li>
+    </ul>
+    <script type="text/javascript">
+    $(document).ready(function() {
+    	$('#ul1').on('click',function(){
+            alert(123);
+        });
+
+        $('#ul1').trigger('click');
+    })
+    </script>
+</body>
+
+</html>
