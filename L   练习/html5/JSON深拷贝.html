@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript">
+    	window.onload=function(){
+    		var a={name:{age:100}};
+
+            var str=JSON.stringify(a);
+
+            var b=JSON.parse(str);
+
+            b.name.age=200;
+
+            alert(a.name.age)
+    	}
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>

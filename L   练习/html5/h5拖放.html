@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+    ul li {
+        list-style: none;
+        margin: 10px;
+        width: 100px;
+        height: 30px;
+        background-color: orange;
+    }
+    
+    #div1 {
+        margin-top: 200px;
+        margin-left: 50px;
+        width: 100px;
+        height: 100px;
+        background-color: red;
+    }
+    </style>
+    <script type="text/javascript">
+    window.onload = function() {
+        var aLi = document.getElementsByTagName('li');
+        var oDiv = document.getElementById('div1');
+
+        var i = 0;
+
+        for (var i = 0; i < aLi.length; i++) {
+            aLi[i].ondragstart = function(ev) {
+            	var ev=ev||window.event;
+
+            	ev.dataTransfer.setData('name','hello');
+
+                this.style.backgroundColor = 'red';
+            }
+
+            aLi[i].ondragend = function() {
+                this.style.backgroundColor = 'orange';
+            }
+
+            aLi[i].ondrag = function() {
+                // document.title = i++;
+            }
+
+            oDiv.ondragenter = function() {
+                this.style.backgroundColor = 'blue';
+            }
+
+            oDiv.ondragleave = function() {
+                this.style.backgroundColor = 'red';
+            }
+
+            oDiv.ondragover = function(ev) {
+                document.title = i++;
+
+                ev.preventDefault();
+            }
+
+             oDiv.ondrop = function(ev) {
+                alert(ev.dataTransfer.getData('name'));
+            }
+
+
+        }
+    }
+    </script>
+</head>
+
+<body>
+    <ul>
+        <li draggable="true"></li>
+        <li draggable="true"></li>
+        <li draggable="true"></li>
+    </ul>
+    <div id="div1">
+    </div>
+</body>
+
+</html>

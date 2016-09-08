@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap</title>
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+</head>
+
+<body>
+    <div style="width:400px;">
+        <ul class="nav nav-tabs">
+            <li class="active"><a href="#a" data-toggle="tab">aaaaaaa</a></li>
+            <li><a href="#b" data-toggle="tab">bbbbbb</a></li>
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+            cccccc
+            <span class="caret"></span>
+            </a>
+                <ul class="dropdown-menu">
+                    <li><a href="#" data-toggle="tab">c1</a></li>
+                    <li><a href="#" data-toggle="tab">c2</a></li>
+                    <li><a href="#" data-toggle="tab">c3</a></li>
+                </ul>
+            </li>
+        </ul>
+        <ul class="tab-content">
+            <li id="a" class="tab-pane active">
+                aaaaaaa
+            </li>
+            <li id="b" class="tab-pane">bbbbbbbb</li>
+            <li id="c" class="tab-pane">cccccccc</li>
+            <li id="d" class="tab-pane">dddddddd</li>
+        </ul>
+    </div>
+    <script type="text/javascript" src="jquery-1.12.3.min.js"></script>
+    <script type="text/javascript" src="bootstrap.min.js"></script>
+</body>
+
+</html>

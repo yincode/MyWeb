@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+    window.onload = function() {
+    	var oDiv=document.getElementById('div1');
+
+    	oDiv.classList.add('cls4');
+    	oDiv.classList.remove('cls1');
+    	oDiv.classList.toggle('cls2');
+
+    	alert(oDiv.classList)
+
+    }
+    </script>
+</head>
+
+<body>
+    <div id="div1" class="cls1 cls2 cls3">
+        div
+    </div>
+</body>
+
+</html>

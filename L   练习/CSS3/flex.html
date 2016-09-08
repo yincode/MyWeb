@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>flex</title>
+    <style type="text/css">
+    * {
+        padding: 0;
+        margin: 0;
+    }
+    
+    .father {
+    	display: -webkit-box;
+    	display: -ms-box;
+        display: box;
+        -webkit-box-pack: justify;
+        width: 100%;
+        height: 300px;
+        background: #978C8C;
+    }
+    
+    .father div {
+        width: 100px;
+        height: 100px;
+        background-color: #8AA44B;
+        margin: 2px;
+         -webkit-box-flex: 2;
+-ms-box-flex: 2; 
+    }
+    </style>
+</head>
+
+<body>
+    <div class="father">
+        <div class="box00"></div>
+        <div class="box02"></div>
+        <div class="box03"></div>
+    </div>
+</body>
+
+</html>
