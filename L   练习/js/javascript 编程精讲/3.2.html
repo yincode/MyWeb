@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+    function isEven(number) {
+        if (number == 0) {
+            return true;
+        } else if (number == 1) {
+            return false;
+        } else if (number < 0) {
+            return isEven(-number);
+        } else {
+            return isEven(number - 2);
+        }
+    }
+    alert(isEven(50));
+    alert(isEven(75));
+    alert(isEven(-1));
+    </script>
+</body>
+
+</html>

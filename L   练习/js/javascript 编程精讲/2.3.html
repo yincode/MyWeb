@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+    var size = 16;
+
+    var board = "";
+
+    for (var y = 0; y < size; y++) {
+        for (var x = 0; x < size; x++) {
+        	if ((x+y)%2==0) {
+        		board+=" ";
+        	}else{
+        		board+="#";
+        	}
+        }
+
+        board+="\n";
+    }
+
+    console.log(board);
+    </script>
+</body>
+
+</html>
