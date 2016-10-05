@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>css3幻灯片</title>
+    <script type="text/javascript">
+    var img01 = new Image();
+    var img02 = new Image();
+    var img03 = new Image();
+    var img04 = new Image();
+    img01.src = "img/1.jpg";
+    img02.src = "img/2.jpg";
+    img03.src = "img/3.jpg";
+    img04.src = "img/4.jpg";
+
+    /*var images = new Array();
+
+    function preLoad() {
+        for (var i = 0; i < preLoad.arguments.length; i++) {
+            imgs[i] = new Image();
+            imgs[i].src = preLoad.arguments[i];
+        }
+    }
+
+    preLoad("img/1.jpg", "img/2.jpg", "img/3.jpg")*/
+    </script>
+</head>
+<style type="text/css">
+#pic {
+    width: 800px;
+    height: 450px;
+    margin: 100px auto;
+    overflow: hidden;
+    box-shadow: 0px 5px 5px #666;
+    background-position: center;
+    background-size: cover;
+    -webkit-animation-name: bgPic;
+    -webkit-animation-duration: 20s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+}
+
+@-webkit-keyframes bgPic {
+    0% {
+        background: url('img/1.jpg') no-repeat;
+    }
+    25% {
+        background: url('img/2.jpg') no-repeat;
+    }
+    50% {
+        background: url('img/3.jpg') no-repeat;
+    }
+    75% {
+        background: url('img/4.jpg') no-repeat;
+    }
+}
+
+@keyframes bgPic {
+    0% {
+        background: url('img/1.jpg') no-repeat;
+    }
+    25% {
+        background: url('img/2.jpg') no-repeat;
+    }
+    50% {
+        background: url('img/3.jpg') no-repeat;
+    }
+    75% {
+        background: url('img/4.jpg') no-repeat;
+    }
+    100% {
+        background: url('img/2.jpg') no-repeat;
+    }
+}
+</style>
+
+<body>
+    <div id="pic">
+    </div>
+</body>
+
+</html>

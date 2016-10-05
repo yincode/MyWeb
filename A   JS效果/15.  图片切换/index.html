@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/reset.css">
+</head>
+
+<body>
+    <div class="box">
+        <form class="btn1">
+            <input type="button" value="顺序播放" id="order">
+            <input type="button" value="循环播放" id="loop">
+        </form>
+        <p id="btnDes">当前为顺序播放模式</p>
+        <img src="img/1.jpg" id="pic">
+        <p id="num">1/5</p>
+        <form>
+            <input type="button" value="上一张" id="forward">
+            <input type="button" value="下一张" id="next">
+        </form>
+        <p id="p">这是第一张图片</p>
+    </div>
+    <script>
+    var oOrder = document.getElementById('order');
+    var oLoop = document.getElementById('loop');
+    var oBtnDes = document.getElementById('btnDes');
+    var oPic = document.getElementById('pic');
+    var oNum = document.getElementById('num');
+    var oForword = document.getElementById('forward');
+    var oNext = document.getElementById('next');
+    var oP = document.getElementById('p');
+
+    var aPic = ["img/1.jpg", "img/2.jpg", "img/3.jpg", "img/4.jpg", "img/5.jpg"];
+    var aInfo = ["这是第一张图片", "这是第二张图片", "这是第三张图片", "这是第四张图片", "这是第五张图片"];
+
+    var num = 0;
+
+    var onoff = true; //默认为顺序播放
+
+    oLoop.onclick = function() {
+        onoff = false;
+        oBtnDes.innerHTML = "当前为循环播放模式";
+    }
+
+    oOrder.onclick = function() {
+        onoff = true;
+        oBtnDes.innerHTML = "当前为顺序播放模式";
+    }
+
+    oNext.onclick = function() {
+        num++;
+
+        if (num == aPic.length) {
+            if (onoff) {
+                num = aPic.length - 1;
+                alert("已经到最后一张了");
+            } else {
+                num = 0;
+            }
+        }
+
+        change();
+    }
+
+    oForword.onclick = function() {
+        num--;
+
+        if (num == -1) {
+            if (onoff) {
+                num = 0;
+                alert("已经到第一张了");
+            } else {
+                num = aPic.length - 1;
+            }
+        }
+
+        change();
+    }
+
+    function change() {
+        oPic.src = aPic[num];
+        oP.innerHTML = aInfo[num];
+        oNum.innerHTML = (num + 1) + "/" + aPic.length;
+    }
+    </script>
+</body>
+
+</html>

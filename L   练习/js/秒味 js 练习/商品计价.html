@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+    li {
+        font-size: 20px;
+        line-height: 50px;
+    }
+    </style>
+</head>
+
+<body>
+    <ul id="ul">
+        <li>
+            <input type="button" name="" value="-">
+            <span>0</span>
+            <input type="button" name="" value="+"> 单价：
+            <b>10</b>元 小计：
+            <strong>0</strong>元
+        </li>
+        <li>
+            <input type="button" name=" " value="-">
+            <span>0</span>
+            <input type="button" name=" " value="+"> 单价：
+            <b>3</b>元 小计：
+            <strong>0</strong>元
+        </li>
+        <li>
+            <input type="button" name="" value="-">
+            <span>0</span>
+            <input type="button" name="" value="+"> 单价：
+            <b>34</b>元 小计：
+            <strong>0</strong>元
+        </li>
+        <li>
+            <input type="button" name=" " value="-">
+            <span>0</span>
+            <input type="button" name="" value="+"> 单价：
+            <b>30</b>元 小计：
+            <strong>0</strong>元
+        </li>
+        <div>
+        </div>
+    </ul>
+    <div id="sum ">
+        <p id="sum_jian">商品一共<span>0</span>件</p>
+        <p id="sum_money">一共花费<span>0</span>元</p>
+        <p id="sum_price">其中最贵的商品是<span>0</span>元</p>
+    </div>
+    <script type="text/javascript ">
+    var oUl = document.getElementById('ul');
+    var aLi = oUl.getElementsByTagName('li');
+
+    var oSum_jian = document.getElementById('sum_jian').getElementsByTagName('span')[0];
+    var sum_money = document.getElementById('sum_money').getElementsByTagName('span')[0];
+    var sum_price = document.getElementById('sum_price').getElementsByTagName('span')[0];
+
+    var oBs = oUl.getElementsByTagName('b');
+    var oSpans = oUl.getElementsByTagName('span');
+    var oStrongs = oUl.getElementsByTagName('strong');
+
+
+    for (var i = 0; i < aLi.length; i++) {
+        tab(i);
+    }
+
+    function tab(i) {
+        var oBtn_jian = aLi[i].getElementsByTagName('input')[0];
+        var oBtn_jia = aLi[i].getElementsByTagName('input')[1];
+        var oNum = aLi[i].getElementsByTagName('span')[0];
+
+        var oSum = 0;
+
+        var s = 0;
+
+        oBtn_jian.onclick = function() {
+            s--;
+            if (s < 0) {
+                s = 0;
+            }
+
+            oNum.innerHTML = s;
+            oStrongs[i].innerHTML = (oSpans[i].innerHTML) * (oBs[i].innerHTML);
+
+            count();
+        }
+
+        oBtn_jia.onclick = function() {
+            s++;
+
+            oNum.innerHTML = s;
+            oStrongs[i].innerHTML = s * (oBs[i].innerHTML);
+
+            count();
+        }
+    }
+
+    function count() {
+        var j = 0;
+        var p = 0;
+        var temp = 0;
+
+        for (var i = 0; i < aLi.length; i++) {
+            j += parseFloat(oSpans[i].innerHTML);
+            p += parseFloat(oStrongs[i].innerHTML);
+
+            if (oSpans[i].innerHTML != 0) {
+                if (temp < parseFloat(oBs[i].innerHTML)) {
+                    temp = parseFloat(oBs[i].innerHTML)
+                }
+            }
+        }
+
+
+
+        oSum_jian.innerHTML = j;
+        sum_money.innerHTML = p;
+        sum_price.innerHTML = temp;
+
+
+    }
+    </script>
+</body>
+
+</html>

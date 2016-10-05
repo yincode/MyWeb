@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+    window.onload = function() {
+        function range(start, end, step) {
+            if (step == null) {
+                step = 1;
+            }
+
+            var results = [];
+
+            if (step > 0) {
+                for (var i = start; i <= end; i += step) {
+                    results.push(i);
+                }
+            } else {
+                for (var i = start; i >= end; i += step) {
+                    results.push(i);
+                }
+            }
+
+
+            return results;
+        }
+
+        alert(range(5, 2, -1))
+
+        function sum(array) {
+            var total = 0;
+
+            for (var i = 0; i < array.length; i++) {
+                total += array[i];
+            }
+
+            return total;
+        }
+
+        alert(sum(range(1, 10, 2)));
+
+    }
+    </script>
+</body>
+
+</html>

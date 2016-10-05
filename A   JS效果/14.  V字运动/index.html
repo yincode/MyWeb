@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<style type="text/css">
+#wrap {
+    width: 500px;
+    height: 600px;
+    margin: 0 auto;
+}
+
+#btn {
+    width: 80px;
+    height: 30px;
+    border: none;
+    background: #8FF7F8;
+    color: #fff;
+    font-size: 16px;
+}
+
+#box {
+    border: 1px solid #ccc;
+    padding: 0;
+    width: 500px;
+    height: 500px;
+    position: relative;
+}
+
+#box li {
+    width: 100px;
+    height: 100px;
+    background: #B641B5;
+    list-style: none;
+    line-height: 100px;
+    text-align: center;
+    color: #fff;
+    font-size: 20px;
+    position: absolute;
+}
+</style>
+
+<body>
+    <div id="wrap">
+        <input type="button" name="" value="click" id="btn">
+        <ul id="box">
+        </ul>
+    </div>
+    <script type="text/javascript">
+    var oBtn = document.getElementById('btn');
+    var oBox = document.getElementById('box');
+
+    var l = 0;
+    var t = 0;
+    var num = 0;
+
+    oBtn.onclick = function() {
+        /*
+        向下
+        i   left    top
+        0   0       0
+        1   100     100
+        2   200     200
+        3   300     100
+        4   400     0
+
+        向右
+        i   left    top
+        0   400     0
+        1   300     100
+        2   200     200
+        3   300     300
+        4   400       400
+
+        向下
+        i   left    top
+        0   0       400
+        1   100     300
+        2   200     200
+        3   300     300
+        4   400     400
+
+         */
+        var str = "";
+
+        //向下
+        if (num == 0) {
+            for (var i = 0; i < 5; i++) {
+                l = i * 100;
+                if (i <= 2) {
+                    t = i * 100;
+                } else {
+                    t = 400 - i * 100;
+                }
+
+
+                str += '<li style="left:' + l + 'px;top:' + t + 'px;">' + i + '</li>';
+
+            }
+        }
+
+
+        //向右
+        if (num == 1) {
+            for (var i = 0; i < 5; i++) {
+                t = i * 100;
+
+                if (i <= 2) {
+                    l = 400 - i * 100;
+                } else {
+                    l = i * 100;
+                }
+
+
+                str += '<li style="left:' + l + 'px;top:' + t + 'px;">' + i + '</li>';
+
+            }
+        }
+
+
+        //向下
+        if (num == 2) {
+            for (var i = 0; i < 5; i++) {
+                l = i * 100;
+
+                if (i <= 2) {
+                    t = 400 - i * 100;
+                } else {
+                    t = i * 100;
+                }
+
+
+                str += '<li style="left:' + l + 'px;top:' + t + 'px;">' + i + '</li>';
+
+            }
+        }
+
+
+        //向左
+        if (num == 3) {
+            for (var i = 0; i < 5; i++) {
+                t = i * 100;
+
+                if (i <= 2) {
+                    l = i * 100;
+                } else {
+                    l = 400 - i * 100;
+                }
+
+
+                str += '<li style="left:' + l + 'px;top:' + t + 'px;">' + i + '</li>';
+
+            }
+        }
+
+        num++;
+        if (num == 4) {
+            num = 0;
+        }
+        oBox.innerHTML = str;
+    }
+    </script>
+</body>
+
+</html>
