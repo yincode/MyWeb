@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width  user-scalable=no">
+    <title>相册</title>
+    <script type="text/javascript">
+    document.getElementsByTagName("html")[0].style.fontSize = window.screen.width / 10 + "px";
+    </script>
+    <style type="text/css">
+    body {
+        margin: 0;
+        font-size: 0.4rem;
+        background-color: #e1e1e1;
+    }
+
+    #picWrap {
+        width: 100%;
+        overflow: hidden;
+    }
+
+    #picList {
+        width: 40rem;
+        overflow: hidden;
+    }
+
+    #picList a {
+        float: left;
+    }
+
+    #picList img {
+        width: 10rem;
+    }
+
+    #btn {
+        height: 0.5rem;
+        margin: 0;
+        padding: 0.2rem;
+        text-align: center;
+    }
+
+    #btn span {
+        display: inline-block;
+        width: 0.5rem;
+        height: 0.5rem;
+        border: 1px solid black;
+        border-radius: 0.5rem;
+        margin: 0 0.5rem;
+        vertical-align: top;
+        box-sizing: border-box;
+    }
+
+    #btn .active {
+        background: orange;
+    }
+    </style>
+</head>
+
+<body>
+    <section id="picWrap">
+        <nav id="picList">
+            <a href="#1"><img src="img/1.jpg"></a>
+            <a href="#2"><img src="img/2.jpg"></a>
+            <a href="#3"><img src="img/3.jpg"></a>
+            <a href="#4"><img src="img/4.jpg"></a>
+        </nav>
+    </section>
+    <p id="btn">
+        <span class="active"></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </p>
+    <script type="text/javascript">
+    var oPicList = document.getElementById("picList");
+    var iScroll = 0;
+    var iNow = 0;
+    var iStartX = 0;
+    var iStartScroll = 0;
+
+
+    document.ontouchmove = function(e) {
+        e.preventDefault();
+    }
+
+    oPicList.ontouchstart = function(e) {
+
+        alert("dfd");
+        iStartX = e.changedTouches[0].pageX;
+        iStartScroll = iScroll;
+    }
+
+
+    oPicList.ontouchmove = function(e) {
+        var iDis = e.changedTouches[0].pageX - iStartX;
+        iScroll = iStartScroll + iDis;
+
+        toStyle();
+        console.log(iScroll);
+    }
+
+    oPicList.ontouchend = function(e) {
+        var iDis = e.changedTouches[0].pageX - iStartX;
+        iScroll = iStartScroll + iDis;
+        iNow=-iScroll/window.screen.width;
+        iNow=iNow%1<0.35?Math.floor(iNow):iNow.ceil(iNow);
+
+        if (iNow<0) {
+            iNow=0;
+        }
+
+        iScroll=-iNow*window.screen.width;
+
+        toStyle();
+            }
+
+    function toStyle() {
+        oPicList.style.WebkitTransform = "translateX(" + iScroll + "px)";
+    }
+    </script>
+</body>
+
+</html>
